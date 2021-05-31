@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using PullToRefresh;
+using CTracker;
 
 public class PullDownLoad : MonoBehaviour
 {
@@ -9,25 +8,31 @@ public class PullDownLoad : MonoBehaviour
     [SerializeField]
     private UIRefreshControl refreshControl;
 
+    // Reference to interface and implementation
+    private GetData data;
+    private IRefreshData refreshData;
+
     private void Start()
     {
-        //Add listener to call RefreshApp while UI swiped down
-        refreshControl.OnRefresh.AddListener(RefreshApp);
+        // Add listener to call RefreshApp while UI swiped down
+        refreshControl.OnRefresh.AddListener(RefreshFetch);
+
+        // Object of GetData() assigned to interface
+        data = new GetData();
+        refreshData = data;
     }
 
-    public void RefreshApp()
+    // Fetch the global data
+    public void RefreshFetch()
     {
-        StartCoroutine(RefreshFetch());
+        StartCoroutine(refreshData.GetGlobalData()); 
     }
 
-    private IEnumerator RefreshFetch()
+    // When refresh is over
+    public void EndRefresh()
     {
-        // TODO: Replace with code for fetching covid data
-        yield return new WaitForSeconds(2);
-
-        // When refresh is over
         refreshControl.EndRefreshing();
     }
 
-
 }
+
