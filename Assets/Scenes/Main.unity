@@ -677,6 +677,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refreshControl: {fileID: 1665157569}
+  casesUI: {fileID: 385192693}
+  confirmedUI: {fileID: 1047275888}
+  criticalUI: {fileID: 1671230774}
+  deathsUI: {fileID: 204658479}
+  recoveredUI: {fileID: 1123248760}
 --- !u!1 &385192691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Suspected
+  m_text: Confirmed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3064,7 +3069,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Confirmed
+  m_text: Critical
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
